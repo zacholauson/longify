@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "bourbon";
+@import "neat";
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
+
+$alizarin: #e74c3c;
+$clouds: #eceef1;
+$darkblue: #2c3e50;
+$lightblue: #2980b9;
+
+body {
+  background-color: $clouds;
+  font-family: 'Oxygen', sans-serif;
+  color: $darkblue;
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $lightblue;
+  }
+}
+
+.header {
+  line-height: 0px;
+  margin-bottom: 100px;
+
+  #logo {
+    @include shift(4.25);
+    margin-top: 250px;
+    h1 {
+      font-size: 8em;
+    }
+
+    a {
+      color: $darkblue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $alizarin;
+    }
+  }
+
+  #tagline {
+    @include shift(4.3);
+    margin-top: -13px;
+  }
+}
+
+.container {
+  @include span-columns(8);
+  @include shift(2);
+  word-wrap: normal;
+
+  a {
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -hp-pre-wrap;
+    word-wrap: break-word;
+  }
+
+  #show-header {
+    @include shift(3.8);
+  }
+
+  #new-url {
+    @include span-columns(8);
+    @include shift(1.5);
+    text-align: center;
+  }
+
+  form {
+    @include shift(3.5);
+    input:nth-child(1) {
+      @include span-columns(4);
+      padding: 8px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border: 5px solid white;
+      background-color: $clouds;
+      outline: 0;
+    }
+
+    .button {
+       @include span-columns(2);
+       height: 39px;
+       margin-top: 1.75px;
+       background-color: white;
+       border-top-right-radius: 5px;
+       border-bottom-right-radius: 5px;
+       border-top: 5px solid white;
+       border-right: 5px solid white;
+       border-bottom: 5px solid white;
+       border-left: none;
+    }
+    .button:hover {
+      background-color: $lightblue;
+      color: $clouds;
+    }
+  }
+}
+
