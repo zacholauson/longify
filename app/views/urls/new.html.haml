@@ -1,0 +1,3 @@
+= simple_form_for @url do |f|
+  = f.input :original_url, label: false, input_html: { size: 50 }, placeholder: "Paste link here"
+  = f.submit "Longify!", class: "button"

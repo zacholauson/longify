@@ -1,0 +1,6 @@
+#show-header
+  %h3 Share this bad boy with your friends
+#new-url
+  = link_to @url.new_url, @url.new_url
+  %br
+  = "Visits: #{@url.visits}"
