@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Longify
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .header
+      #logo
+        %h1= link_to "Longify", root_path
+      #tagline
+        %h4 Make those short links longer
+    .container
+      = yield
