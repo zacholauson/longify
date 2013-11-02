@@ -1,7 +1,4 @@
 class LongifyController < ApplicationController
-  def index
-  end
-
   def new
     @url = Url.new
   end
@@ -28,7 +25,7 @@ class LongifyController < ApplicationController
       url.save
       redirect_to(url.original_url)
     else
-      redirect_to(:index)
+      redirect_to root_path
     end
   end
 end
