@@ -1,16 +1,18 @@
-class LongifyController < ApplicationController
+class UrlsController < ApplicationController
+  def index
+  end
+
   def new
     @url = Url.new
   end
 
   def create
-    begin
-      url = Url.find_or_create_by!(original_url: params[:original_url])
-    rescue
-      flash[:notice] = "Invalid Url"
-      redirect_to new_longified_path
+    @url = Url.find_or_create_by(original_url: params[:url][:original_url])
+    if @url
+      redirect_to url_path(@url)
+    else
+      redirect_to root_url
     end
-    redirect_to show_longified_path(url)
   end
 
   def show
