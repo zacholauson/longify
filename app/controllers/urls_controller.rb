@@ -25,6 +25,7 @@ class UrlsController < ApplicationController
     if url
       url.visits += 1
       url.save
+      p "*" * 1000
       redirect_to(url.original_url)
     else
       redirect_to root_path

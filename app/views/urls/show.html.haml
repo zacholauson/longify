@@ -3,4 +3,4 @@
 #new-url
   = link_to @url.new_url, @url.new_url
   %br
-  = "Visits: #{@url.visits}"
+  = "Visits: #{@url.visits.to_i / 2}"
