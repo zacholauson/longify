@@ -9,7 +9,7 @@ class Url < ActiveRecord::Base
   before_create :generate_longified_url
 
   def new_url
-    @domain = 'http://localhost:3000/'
+    @domain = 'http://longify.zacholauson.io/'
     @domain + self.longified_url
   end
 
